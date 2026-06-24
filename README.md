@@ -1,14 +1,14 @@
-PEAK Luxury E-Commerce
+PEAK Luxury E-Commerce:
 
 A premium luxury e-commerce web application built using Django. PEAK provides a modern shopping experience with product browsing, user authentication, cart management, and order processing through a clean and responsive interface.
 
 
-Project Overview
+Project Overview:
 
 PEAK is a full-stack e-commerce platform developed to demonstrate practical web development skills using Django and modern frontend technologies. The application follows the MVT (Model-View-Template) architecture and includes essential e-commerce functionalities required in real-world online stores.
 
 
-User Features                             Admin Features                                           
+User Features :                            Admin Features :                                         
 
 User Registration and Login                Product Management
 Secure Authentication System               Category Management
@@ -19,7 +19,7 @@ Order Placement
 Order History
 Responsive User Interface
 
-Tech Stack
+Tech Stack :
 Frontend:                            Database:                    Tools:                
         HTML5                                 SQLite3                   Git             
         CSS3                                                            GitHub
@@ -29,7 +29,8 @@ Backend:
         Python
         Django
 
-Project Structure
+Project Structure:
+
 PEAK/
 │
 ├── store/
@@ -45,7 +46,7 @@ PEAK/
 ├── db.sqlite3
 └── requirements.txt
 
-Key Learning Outcomes
+Key Learning Outcomes :
 
 Django MVT Architecture
 Database Design with SQLite
@@ -56,7 +57,7 @@ Responsive Web Design
 Git Version Control
 Full-Stack Application Development
 
-Future Enhancements
+Future Enhancements :
 
 AI Product Recommendation System
 Product Reviews and Ratings
