@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- DASHBOARD HEADER -->
+
+<section class="dashboard-header">
+
+    <div class="container text-center">
+
+        <h1>My Account</h1>
+
+        <p>Manage your PEAK luxury experience</p>
+
+    </div>
+
+</section>
+
+<!-- DASHBOARD CONTENT -->
+
+<section class="dashboard-section py-5">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- SIDEBAR -->
+
+            <div class="col-lg-3 mb-4">
+
+                <div class="dashboard-sidebar">
+
+                    <div class="user-box">
+
+                        <div class="user-avatar">
+                            {{ request.user.username|first|upper }}
+                        </div>
+
+                        <h5>{{ request.user.username }}</h5>
+
+                        <p>{{ request.user.email }}</p>
+
+                    </div>
+
+                    <ul class="dashboard-menu">
+
+                        <li>
+                            <a href="{% url 'profile' %}">
+                                Dashboard
+                            </a>
+
+                        <li>
+                            <a href="{% url 'order_history' %}">
+                                My Orders
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'wishlist' %}">
+                                Wishlist
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'addresses' %}">
+                                Addresses
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Settings
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'logout' %}">
+                                Logout
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- CONTENT -->
+
+            <div class="col-lg-9">
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Welcome Back,
+                        {{ request.user.first_name|default:request.user.username }}
+                    </h3>
+
+                    <p>
+                        Here is an overview of your account.
+                    </p>
+
+                    <div class="row mt-4">
+
+                        <div class="col-md-4 mb-4">
+
+                            <div class="stat-card">
+
+                                <h2>
+                                    {{ total_orders|default:"0" }}
+                                </h2>
+
+                                <p>Total Orders</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+
+                            <div class="stat-card">
+
+                                <h2>
+                                    {{ wishlist_count|default:"0" }}
+                                </h2>
+
+                                <p>Wishlist Items</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+
+                            <div class="stat-card">
+
+                                <h2>
+                                    {{ cart_count|default:"0" }}
+                                </h2>
+
+                                <p>Cart Items</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RECENT ORDERS -->
+
+                <div class="dashboard-card mt-4">
+
+                    <h4>Recent Orders</h4>
+
+                    <div class="table-responsive">
+
+                        <table class="table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                {% for order in orders %}
+
+                                <tr>
+
+                                    <td>
+                                        #{{ order.id }}
+                                    </td>
+
+                                    <td>
+                                        {{ order.created }}
+                                    </td>
+
+                                    <td>
+                                        <span class="badge badge-success">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        ₹{{ order.total }}
+                                    </td>
+
+                                </tr>
+
+                                {% empty %}
+
+                                <tr>
+
+                                    <td colspan="4"
+                                        class="text-center">
+
+                                        No orders found
+
+                                    </td>
+
+                                </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

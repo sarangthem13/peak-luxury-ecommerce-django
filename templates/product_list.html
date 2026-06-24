@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- PAGE HEADER -->
+
+<section class="shop-banner">
+
+    <div class="container text-center">
+
+        <h1>Luxury Collection</h1>
+
+        <p>
+            Discover premium fashion crafted for modern lifestyles.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SHOP SECTION -->
+
+<section class="container py-5">
+
+    <div class="row">
+
+        <!-- SIDEBAR -->
+
+        <div class="col-lg-3">
+
+            <div class="filter-box">
+
+                <h4>Categories</h4>
+
+                <ul class="category-list">
+
+                    <li>
+                        <a href="#">All Products</a>
+                    </li>
+
+                    {% for category in categories %}
+
+                    <li>
+                        <a href="#">
+                            {{ category.name }}
+                        </a>
+                    </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+            <div class="filter-box">
+
+                <h4>Price Range</h4>
+
+                <input type="range"
+                       class="custom-range">
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCTS -->
+
+        <div class="col-lg-9">
+
+            <div class="row">
+
+                {% for product in products %}
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="luxury-product">
+
+                        <div class="product-image-wrapper">
+
+                            <img src="{{ product.image.url }}"
+                                 class="img-fluid">
+
+                            <div class="product-overlay">
+
+                                <a href="#"
+                                   class="btn btn-light btn-sm">
+
+                                    Quick View
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="product-content">
+
+                            <h5>
+                                {{ product.name }}
+                            </h5>
+
+                            <span class="product-price">
+                                ₹{{ product.price }}
+                            </span>
+
+                            <a href="{% url 'product_detail' product.id %}"
+                               class="btn btn-dark btn-block">
+                                 View Product
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

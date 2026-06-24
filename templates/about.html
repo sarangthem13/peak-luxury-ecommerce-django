@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="about-header">
+
+    <div class="container text-center">
+
+        <h1>About PEAK</h1>
+
+        <p>Luxury Beyond Ordinary</p>
+
+    </div>
+
+</section>
+
+<section class="container py-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-6">
+
+            <img src="{% static 'images/about.jpg' %}"
+                 class="img-fluid">
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <h2>Our Story</h2>
+
+            <p>
+
+                PEAK represents elegance,
+                sophistication and timeless fashion.
+
+            </p>
+
+            <p>
+
+                Every collection is carefully designed
+                to deliver luxury experiences.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

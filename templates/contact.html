@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="contact-header">
+
+    <div class="container text-center">
+
+        <h1>Contact Us</h1>
+
+        <p>We're here to help</p>
+
+    </div>
+
+</section>
+
+<section class="container py-5">
+
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <h3>Get In Touch</h3>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <input type="text"
+                       class="form-control mb-3"
+                       placeholder="Name">
+
+                <input type="email"
+                       class="form-control mb-3"
+                       placeholder="Email">
+
+                <textarea class="form-control mb-3"
+                          rows="6"
+                          placeholder="Message"></textarea>
+
+                <button class="btn btn-gold">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <h3>PEAK Luxury</h3>
+
+            <p>Email: support@peak.com</p>
+
+            <p>Phone: +91 9876543210</p>
+
+            <p>Available 24/7</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="faq-header">
+
+    <div class="container text-center">
+
+        <h1>Frequently Asked Questions</h1>
+
+    </div>
+
+</section>
+
+<section class="container py-5">
+
+    <div id="accordion">
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <button class="btn btn-link"
+                        data-toggle="collapse"
+                        data-target="#faq1">
+
+                    How long is shipping?
+
+                </button>
+
+            </div>
+
+            <div id="faq1"
+                 class="collapse show"
+                 data-parent="#accordion">
+
+                <div class="card-body">
+
+                    Shipping usually takes 3-7 days.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <button class="btn btn-link"
+                        data-toggle="collapse"
+                        data-target="#faq2">
+
+                    Can I return products?
+
+                </button>
+
+            </div>
+
+            <div id="faq2"
+                 class="collapse"
+                 data-parent="#accordion">
+
+                <div class="card-body">
+
+                    Yes, within 14 days.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
