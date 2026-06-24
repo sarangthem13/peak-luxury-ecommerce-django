@@ -20,14 +20,8 @@ Order History
 Responsive User Interface
 
 Tech Stack :
-Frontend:                            Database:                    Tools:                
-        HTML5                                 SQLite3                   Git             
-        CSS3                                                            GitHub
-        Bootstrap 4.5                                                   VS Code
-        JavaScript
-Backend:
-        Python
-        Django
+Frontend: HTML5│ CSS3 │ Bootstrap 4.5 │ JavaScript    Database: SQLite3      Tools: Git │  GitHub │  VS Code
+Backend:Python │ Django
 
 Project Structure:
 
